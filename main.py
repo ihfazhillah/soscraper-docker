@@ -30,9 +30,9 @@ def search(query):
 
 
 @click.command()
-@click.argument('query')
+@click.argument('query', nargs=-1)
 def searching(query):
-    result = search(query)
+    result = search(' '.join(query))
     pprint.pprint(result, indent=4)
 
 
